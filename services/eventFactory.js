@@ -1,9 +1,14 @@
 angular.module('eventApp')
-.factory('eventFactory', ['FBMSG', '$firebaseArray', function(FBMSG, $firebaseArray) {
+.factory('eventFactory', ['FBCAT','FBMSG', '$firebaseArray', function(FBCAT, FBMSG, $firebaseArray) {
 	
 	var eventFactory = {};
+	// firebase ref for Events
 	var ref = new Firebase(FBMSG);
 	var events = $firebaseArray(ref);
+	
+	// firebase ref for Categories
+	var catsRef = new Firebase(FBCAT);
+	var cats = $firebaseArray(catsRef);
 	
 	eventFactory.getAllEvents = function(){
 		console.log(events);
@@ -21,6 +26,11 @@ angular.module('eventApp')
 	eventFactory.updateEvent = function(event){
 		return events.$save(event);
 	}
+	
+	eventFactory.getAllCats = function(){
+		return cats;
+	}
+	
 	
 	return eventFactory;
 	
