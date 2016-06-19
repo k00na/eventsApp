@@ -1,7 +1,11 @@
 angular.module('eventApp')
-.controller('addEventCtrl', ['FBCAT','authFactory', 'eventFactory', function(FBCAT, authFactory, eventFactory){
+.controller('addEventCtrl', ['authFactory', 'eventFactory', function(authFactory, eventFactory){
 
 	var self = this;
+	
+	self.categories = initialData;
+	
+	console.log(self.categories);
 	
 	
 	
