@@ -31,11 +31,27 @@ angular.module('eventApp', ['firebase', 'ngRoute', 'ngMessages'])
 		}
 	}),
 		
+	$routeProvider.when('/addEvent', {
+		
+		templateUrl: '/addEvent/add-event.html',
+		controller: 'addEventCtrl',
+		controllerAs: 'addEventCtl',
+		resolve: {
+			"currentAuth": ["authFactory", function(authFactory) {
+				var auth = authFactory.auth();
+				console.log(auth);
+				return auth.$requireAuth();
+			}]
+		}
+	}),
+		
 	$routeProvider.when('/login', {
 		templateUrl:'/login/login.html',
 		controller: 'loginCtrl',
 		controllerAs: 'loginCtl'
 	}),
+		
+	
 		
     $routeProvider.otherwise({redirectTo:'/'});
        
