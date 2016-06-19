@@ -1,6 +1,7 @@
 angular.module('eventApp')
 .controller('addEventCtrl', ['authFactory', 'eventFactory', 'initialData', function(authFactory, eventFactory, initialData){
 
+	// BUGNOTE: če hočemo bit izvrstni spet moramo naslednjič pazit na vrstni red argumentov funkcije. 
 	var self = this;
 	self.eventForm = {};
 	self.categories = initialData;

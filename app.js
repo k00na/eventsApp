@@ -2,7 +2,7 @@
 
 angular.module('eventApp', ['firebase', 'ngRoute', 'ngMessages'])
 .constant('FBMSG', 'https://eventappkuna.firebaseio.com/events')
-.constant('FBCAT', 'https://eventappkuna.firebaseio.com/categories')
+.constant('FBCAT', 'https://eventappkuna.firebaseio.com/categoriesTest')
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 	
 	$routeProvider.when('/', {
