@@ -1,5 +1,5 @@
 angular.module('eventApp')
-.controller('addEventCtrl', ['authFactory', 'eventFactory', function(authFactory, eventFactory){
+.controller('addEventCtrl', ['authFactory', 'eventFactory', 'initialData', function(authFactory, initialData, eventFactory){
 
 	var self = this;
 	

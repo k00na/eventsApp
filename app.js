@@ -1,4 +1,8 @@
+
+
 angular.module('eventApp', ['firebase', 'ngRoute', 'ngMessages'])
+.get('*', '/')
+.constant('app', app)
 .constant('FBMSG', 'https://eventappkuna.firebaseio.com/events')
 .constant('FBCAT', 'https://eventappkuna.firebaseio.com/categories')
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
@@ -58,7 +62,7 @@ angular.module('eventApp', ['firebase', 'ngRoute', 'ngMessages'])
 		controllerAs: 'loginCtl'
 	}),
 		
-	
+	app.get('*', routes.index);
 		
     $routeProvider.otherwise({redirectTo:'/'});
        
