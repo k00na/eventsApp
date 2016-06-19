@@ -56,7 +56,7 @@
                         <div class="col-md-6 col-sm-6 col-xs-12 col-lg-6">
                             <div class="form-group" ng-class="{'has-error': addEventForm.eventCategory.$touched && addEventForm.eventCategory.$invalid, 'has-success': addEventForm.eventCategory.$touched && addEventForm.eventCategory.$valid }">
                                 <label for="eventCategory"  class="control-label">Category</label>
-                                <select class="form-control" required ng-model='addEventCtl.selectedOption' ng-options="category.name for category in addEventCtl.categories track by category.id" data-width="100%" name="eventCategory">
+                                <select class="form-control" required ng-model='addEventCtl.selectedOption' ng-options="category.$id for category in addEventCtl.categories track by category.$id" data-width="100%" name="eventCategory">
                                 </select>
                                 <div ng-messages="addEventForm.eventCategory.$dirty && addEventForm.eventCategory.$error">
                                     <div ng-messages-include="error-messages"></div>
