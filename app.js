@@ -1,5 +1,6 @@
 angular.module('eventApp', ['firebase', 'ngRoute', 'ngMessages'])
 .constant('FBMSG', 'https://eventappkuna.firebaseio.com/events')
+.constant('FBCAT', 'https://eventappkuna.firebaseio.com/categories')
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 	
 	$routeProvider.when('/', {
@@ -31,12 +32,18 @@ angular.module('eventApp', ['firebase', 'ngRoute', 'ngMessages'])
 		}
 	}),
 		
-	$routeProvider.when('/addEvent', {
+	$routeProvider.when('/add-event', {
 		
 		templateUrl: '/addEvent/add-event.html',
 		controller: 'addEventCtrl',
 		controllerAs: 'addEventCtl',
 		resolve: {
+			
+			"initialData": ["eventFactory", function(eventFactory) {
+				var eventCats = eventFactory.getAllCats();
+				console.log(eventCats);
+				return eventCats;
+			}],
 			"currentAuth": ["authFactory", function(authFactory) {
 				var auth = authFactory.auth();
 				console.log(auth);

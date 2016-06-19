@@ -1,5 +1,12 @@
 angular.module('eventApp')
-.controller('addEventCtrl', ['FBMSG', '$scope', '$firebase','authFactory'] )
+.controller('addEventCtrl', ['FBCAT','authFactory', 'eventFactory', function(FBCAT, authFactory, eventFactory){
+
+	var self = this;
+	
+	
+	
+	
+}])
 			
 /*
 angular.module('eventApp')
@@ -8,4 +15,8 @@ angular.module('eventApp')
 			
 
 			
+
+/*
+controller('eventManagerCtrl', ['eventFactory', 'initialData', function(eventFactory, initialData) {
+*/
 			
