@@ -61,6 +61,7 @@
                         <p>Error:</p>
                         <span></span>
                     </div>
+					<!-- ENTER EMAIL -->
                     <div class="form-group" ng-class="{'has-error': signUpForm.email.$touched && signUpForm.email.$invalid, 'has-success': signUpForm.email.$touched && signUpForm.email.$valid }">
                         <label for="email"  class="col-md-3 control-label">Email</label>
                         <div class="col-md-9">
@@ -71,6 +72,19 @@
                             </div>
                         </div>
                     </div>
+					
+					<!-- ENTER ORGANISER NAME -->
+					<div class="form-group" ng-class="{'has-error': signUpForm.organiserName.$touched && signUpForm.organiserName.$invalid, 'has-success': signUpForm.organiserName.$touched && signUpForm.organiserName.$valid }">
+                        <label for="organiserName"  class="col-md-3 control-label">Organiser Name</label>
+                        <div class="col-md-9">
+                            <input type="email"class="form-control" required ng-model="loginCtl.organiserName" name="organiserName" placeholder="Email Address">
+                            <div ng-messages="signUpForm.organiserName.$dirty && signUpForm.organiserName.$error">
+                                <div ng-message='required'> Organiser Name is required. </div>
+                                <div ng-message='email'> The Email entered is not a valid email </div>
+                            </div>
+                        </div>
+                    </div>
+					
                     <div class="form-group" ng-class="{'has-error': signUpForm.passwd.$touched && signUpForm.passwd.$invalid, 'has-success': signUpForm.passwd.$touched && signUpForm.passwd.$valid }">
                         <label for="password"   class="col-md-3 control-label">Password</label>
                         <div class="col-md-9">

@@ -5,7 +5,21 @@ angular.module('eventApp')
 	var self = this;
 	self.eventForm = {};
 	self.categories = initialData;
-	//self.selectedOption = self.categories[0].jazz;
+	self.selectedOption = "dummyCat";
+	
+	self.submitForm = function(event){
+		
+		event.category = self.selectedOption.$value;
+		
+		eventFactory
+			.createEvent(angular.copy(event))
+			.then(function(data) {
+				  alert("Event added successfully")
+				  }, function(error){
+					alert('An error occurred ', error.statusText);
+		});
+		
+	}
 	
 	
 	console.log(self.categories);
@@ -17,7 +31,8 @@ angular.module('eventApp')
 			
 /*
 
-angular.module('eventApp').controller('formCtrl', ['eventFactory', function(eventFactory) {
+angular.module('eventApp')
+.controller('formCtrl', ['eventFactory', function(eventFactory) {
     var self = this;
     this.eventForm = {};
     //this.eventForm.date = new Date(2016,0,1);
